@@ -1,6 +1,7 @@
 # Em desenvolvimento: Instapets 
 
-- [ x ] O caso de uso foi feito e os protótipos também estão prontos.
+- [ x ] protótipos mobile.
+- [ x ] protótipos web.
 
 ## 1. Tela de Login
 
