@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';  // Importa o Router
 import { FormComponent, FormField } from "../../components/form/form.component";
 
 @Component({
@@ -6,28 +7,31 @@ import { FormComponent, FormField } from "../../components/form/form.component";
   standalone: true,
   imports: [FormComponent],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']  // Corrigido o nome para styleUrls
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  constructor(private router: Router) {}  // Injeta o Router
+
   // Defina os campos do formulário
   loginFields: FormField[] = [
     {
-      label: 'E-mail',      // Primeiro campo: Nome
-      type: 'text',       // Tipo de input
-      name: 'email',       // Nome do campo para identificar
-      placeholder: 'humano@email.com'  // Placeholder
+      label: 'E-mail',
+      type: 'text',
+      name: 'email',
+      placeholder: 'humano@email.com'
     },
     {
-      label: 'Senha',    // Segundo campo: E-mail
-      type: 'password',      // Tipo de input
-      name: 'password',      // Nome do campo para identificar
-      placeholder: '*******'  // Placeholder
+      label: 'Senha',
+      type: 'password',
+      name: 'password',
+      placeholder: '*******'
     }
   ];
 
   // Função para capturar o envio do formulário
   onLogin(formValues: any) {
     console.log('Form Values:', formValues);
-    // Aqui vai sua lógica de login
+    // Aqui vai a lógica de login, mas por enquanto redireciona diretamente para o feed
+    this.router.navigate(['/feed']);  // Redireciona para a página de feed
   }
 }
