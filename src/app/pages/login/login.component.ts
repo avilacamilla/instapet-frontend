@@ -1,13 +1,33 @@
 import { Component } from '@angular/core';
-import { FormComponent } from "../../components/form/form.component";
+import { FormComponent, FormField } from "../../components/form/form.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [FormComponent],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']  // Corrigido o nome para styleUrls
 })
 export class LoginComponent {
+  // Defina os campos do formulário
+  loginFields: FormField[] = [
+    {
+      label: 'Nome',      // Primeiro campo: Nome
+      type: 'text',       // Tipo de input
+      name: 'name',       // Nome do campo para identificar
+      placeholder: 'Nome do humano'  // Placeholder
+    },
+    {
+      label: 'E-mail',    // Segundo campo: E-mail
+      type: 'email',      // Tipo de input
+      name: 'email',      // Nome do campo para identificar
+      placeholder: 'meuhumano@pet.com'  // Placeholder
+    }
+  ];
 
+  // Função para capturar o envio do formulário
+  onLogin(formValues: any) {
+    console.log('Form Values:', formValues);
+    // Aqui vai sua lógica de login
+  }
 }

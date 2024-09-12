@@ -1,7 +1,25 @@
 <!-- <app-header></app-header> -->
-<div class="login-container">
-  <img src="path/to/cat-image.png" alt="Cat Image" class="cat-image" />
-  <p class="login-message">Logar você deve...</p>
-  <app-form></app-form>
-</div>
-<!-- <app-footer></app-footer> -->
+<section class="login-container">
+    <div class="login-content-title">
+        <h1 class="content-title">
+            Bem-vindo ao
+        </h1>
+        <img 
+            src="../../../assets/icons/logo-vertical.png" 
+            alt="" 
+            class="content-logo"
+        >
+        <!-- <h2 class="content-subtitle">Fazer login você deve...</h2> -->
+    </div>
+  
+    <!-- Passando os campos e o texto do botão para o app-form -->
+    <app-form 
+        [fields]="loginFields"         
+        [buttonLabel]="'Login'"  
+        (submitForm)="onLogin($event)"
+        class="login-container-form"
+    > <!-- Função chamada ao submeter o formulário -->
+    </app-form>
+</section>
+  <!-- <app-footer></app-footer> -->
+  
