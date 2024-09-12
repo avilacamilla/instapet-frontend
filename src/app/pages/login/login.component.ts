@@ -12,13 +12,13 @@ export class LoginComponent {
   // Defina os campos do formulário
   loginFields: FormField[] = [
     {
-      label: 'Nome',      // Primeiro campo: Nome
+      label: 'E-mail',      // Primeiro campo: Nome
       type: 'text',       // Tipo de input
       name: 'name',       // Nome do campo para identificar
       placeholder: 'Nome do humano'  // Placeholder
     },
     {
-      label: 'E-mail',    // Segundo campo: E-mail
+      label: 'Senha',    // Segundo campo: E-mail
       type: 'email',      // Tipo de input
       name: 'email',      // Nome do campo para identificar
       placeholder: 'meuhumano@pet.com'  // Placeholder

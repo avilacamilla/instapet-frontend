@@ -24,7 +24,15 @@
   width: 15rem;
 }
 
+.content-subtitle {
+  padding: .5rem 0 1rem 0;
+  font-size: .9rem;
+}
 
+.content-subtitle b {
+  color: #e26d36;
+  text-decoration: underline;
+}
 
 .login-container-form {
   display: flex;

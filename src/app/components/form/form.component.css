@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    width: 14rem;
 }
 
 .form-content {
@@ -11,7 +12,7 @@
 }
 
 .form-label {
-    font-size: 1rem;
+    font-size: .9rem;
 }
 
 .form-input {
@@ -31,7 +32,7 @@
     padding: .8rem;
     border: .1rem solid #e26d36;
     border-radius: .5rem;
-    font-size: 1rem;
+    font-size: .95rem;
     font-weight: 500;
     color: #e26d36;
     cursor: pointer;
