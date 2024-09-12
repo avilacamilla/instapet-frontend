@@ -1,0 +1,18 @@
+.login-container {
+    background-color: #e46a2e;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .cat-image {
+    width: 150px;
+    margin: 20px 0;
+  }
+  
+  .login-message {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
