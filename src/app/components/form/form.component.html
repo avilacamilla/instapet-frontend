@@ -1,1 +1,40 @@
-<p>form works!</p>
+<form 
+  (ngSubmit)="onSubmit(formRef.value)" 
+  #formRef="ngForm"
+  class="form-container"
+>
+  <div 
+    *ngFor="let field of fields"
+    class="form-content"  
+  >
+    <label 
+      [for]="field.name"
+      class="form-label"
+    >
+      {{ field.label }}
+    </label>
+    <input 
+      [type]="field.type" 
+      [id]="field.name" 
+      [name]="field.name" 
+      [placeholder]="field.placeholder" 
+      [(ngModel)]="field.value" 
+      required 
+      class="form-input"
+    />
+  </div>
+
+  <button 
+    type="submit" 
+    class="submit-button"
+  >
+    {{ buttonLabel }}
+  </button>
+
+  <p *ngIf="footerLink && footerLinkText">
+    <a 
+      [routerLink]="footerLink">
+        {{ footerLinkText }}
+    </a>
+  </p>
+</form>
