@@ -1,13 +1,14 @@
 .feed-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
   
-h2 {
-    color: #ff7d56;
-    font-weight: bold;
+.feed-container h2 {
+  padding: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #242424;
 }
   
 /* Animação slide-in para o feed */
