@@ -1,1 +1,34 @@
-<p>signup works!</p>
+<!-- <app-header></app-header> -->
+<section class="signup-container">
+    <div class="signup-content-title">
+        <h1 class="content-title">
+            Bem-vindo ao
+        </h1>
+        <img 
+            src="../../../assets/icons/logo-vertical.png" 
+            alt="" 
+            class="content-logo"
+        >
+        <h2 class="content-subtitle">Fazer <b>cadastro</b> você deve...</h2>
+    </div>
+  
+    <!-- Passando os campos e o texto do botão para o app-form -->
+    <app-form 
+        [fields]="signupFields"         
+        [buttonLabel]="'Cadastrar'"  
+        (submitForm)="onSignup($event)"
+        class="signup-container-form"
+    > <!-- Função chamada ao submeter o formulário -->
+    </app-form>
+
+    <p class="signup-content-footer">
+        Já tem conta?
+        <a 
+            href="/login"
+            class="link-nav-to"
+        > 
+         Faça login
+        </a>
+    </p>
+</section>
+<!-- <app-footer></app-footer> -->

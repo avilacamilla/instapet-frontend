@@ -1,0 +1,82 @@
+/* Animação para o efeito de deslizamento de cima para baixo */
+@keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: .8;
+    }
+}
+  
+/* Container principal do formulário de signup */
+  .signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    animation: slideDown 1s ease-in-out; /* Aplicando a animação */
+}
+  
+/* Estilos para o título da página de signup */
+.signup-content-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.content-title {
+    text-align: center;
+    font-family: monospace, sans-serif;
+    font-size: 1.1rem;
+}
+  
+/* Estilo da logo */
+  .content-logo {
+    width: 15rem;
+}
+  
+/* Subtítulo da página de signup */
+.content-subtitle {
+    padding: .5rem 0 1rem 0;
+    font-size: .9rem;
+}
+  
+.content-subtitle b {
+    color: #e26d36;
+    text-decoration: underline;
+}
+  
+/* Estilos do formulário */
+.signup-container-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+  
+/* Estilos do rodapé */
+.signup-content-footer {
+    padding: 1rem 0 0 0;
+    font-size: .8rem;
+    color: #e26d36;
+}
+  
+/* Estilo do link de navegação */
+.link-nav-to {
+    text-decoration: none;
+    font-weight: 600;
+    color: #e26d36;
+}
+  
+.link-nav-to:hover {
+    text-decoration: underline;
+    color: #d95c29;
+}
+  
