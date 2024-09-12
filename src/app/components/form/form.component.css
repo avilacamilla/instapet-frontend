@@ -19,6 +19,7 @@
     padding: .8rem 0 .2rem 0;
     border: none;
     border-bottom: .1rem solid #edbea4;
+    background-color: #e7f0f1;
     outline: none;
 }
 
@@ -32,8 +33,9 @@
     padding: .8rem;
     border: .1rem solid #e26d36;
     border-radius: .5rem;
+    font-family: monospace, sans-serif;
     font-size: .95rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #e26d36;
     cursor: pointer;
     transition: all ease .5s;
