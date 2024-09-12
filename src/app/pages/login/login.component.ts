@@ -14,14 +14,14 @@ export class LoginComponent {
     {
       label: 'E-mail',      // Primeiro campo: Nome
       type: 'text',       // Tipo de input
-      name: 'name',       // Nome do campo para identificar
-      placeholder: 'Nome do humano'  // Placeholder
+      name: 'email',       // Nome do campo para identificar
+      placeholder: 'humano@email.com'  // Placeholder
     },
     {
       label: 'Senha',    // Segundo campo: E-mail
-      type: 'email',      // Tipo de input
-      name: 'email',      // Nome do campo para identificar
-      placeholder: 'meuhumano@pet.com'  // Placeholder
+      type: 'password',      // Tipo de input
+      name: 'password',      // Nome do campo para identificar
+      placeholder: '*******'  // Placeholder
     }
   ];
 

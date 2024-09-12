@@ -12,7 +12,7 @@ export class SignupComponent {
   // Defina os campos do formulário de cadastro
   signupFields: FormField[] = [
     {
-      label: 'Nome',
+      label: 'Nome (do humano)',
       type: 'text',
       name: 'name',
       placeholder: 'Digite seu nome'
