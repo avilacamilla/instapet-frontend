@@ -1,0 +1,28 @@
+.feed-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* background-color: red; */
+}
+  
+h2 {
+    color: #ff7d56;
+    font-weight: bold;
+}
+  
+/* Animação slide-in para o feed */
+@keyframes slideLeft {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+  
+.slide-enter {
+    animation: slideLeft .8s ease-out forwards;
+}
+  
