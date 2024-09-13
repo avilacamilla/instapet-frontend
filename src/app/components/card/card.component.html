@@ -1,0 +1,38 @@
+<mat-card class="mat-card" appearance="outlined">
+    <!-- Botão "x" no canto superior direito -->
+    <button class="mat-card-update-image">x</button>
+    
+    <!-- Imagem do card -->
+    <img class="mat-card-image" [src]="imageSrc" alt="Imagem do card">
+    
+    <!-- Header do card com título e subtítulo -->
+    <mat-card-header class="mat-card-header">
+      <!-- Editar o título -->
+      <mat-card-title class="mat-card-title">
+        <input *ngIf="isEditing" [(ngModel)]="editedTitle" placeholder="Editar título" class="mat-card-input" />
+        <span *ngIf="!isEditing">{{ title }}</span>
+        <button *ngIf="isEditMode" class="edit-icon-btn" (click)="enableEdit()">
+          <img src="../../../assets/icons/edit-icon.png" alt="Editar título" class="edit-icon" />
+        </button>
+      </mat-card-title>
+  
+      <!-- Editar o subtítulo -->
+      <mat-card-subtitle class="mat-card-subtitle">
+        <input *ngIf="isEditing" [(ngModel)]="editedDescription" placeholder="Editar descrição" class="mat-card-input" />
+        <span *ngIf="!isEditing">{{ description }}</span>
+        <button *ngIf="isEditMode" class="edit-icon-btn" (click)="enableEdit()">
+          <!-- <img src="../../../assets/icons/edit-icon.png" alt="Editar descrição" class="edit-icon" /> -->
+        </button>
+      </mat-card-subtitle>
+    </mat-card-header>
+  
+    <!-- Botão de opções no canto -->
+    <button mat-icon-button class="mat-card-btn" (click)="toggleEditMode()">
+      <img src="../../../assets/icons/btn.png" alt="Menu" class="mat-card-btn-icon">
+    </button>
+  
+    <!-- Ícone de salvar no canto inferior direito -->
+    <button *ngIf="isEditMode" class="save-icon-btn" (click)="saveEdit()">
+      <img src="../../../assets/icons/check-icon.png" alt="Salvar alterações" />
+    </button>
+  </mat-card>
