@@ -1,17 +1,21 @@
-<section class="feed-container slide-enter">
+<section class="feed-container">
   <div class="feed-content-header">
     <app-header></app-header>
   </div>
 
   <h2>Olá, Mestre Supremo!</h2>
 
-  <!-- <div *ngFor="let card of cards">
-    <app-card 
-      [imageSrc]="card.imageSrc" 
-      [title]="card.title" 
-      [description]="card.description">
-    </app-card>
-  </div> -->
+  <!-- Exibindo os cards de gatinhos -->
+  <div class="feed-container-cards">
+    <div *ngFor="let card of cards">
+      <app-card 
+        [imageSrc]="card.imageSrc" 
+        [title]="card.title" 
+        [description]="card.description">
+      </app-card>
+    </div>
+  </div>
 
-  <!-- <app-footer></app-footer> -->
+  <!-- Botão flutuante de navegação para /new-post -->
+  <app-button-add></app-button-add>
 </section>

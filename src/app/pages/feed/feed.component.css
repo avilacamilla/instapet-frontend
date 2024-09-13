@@ -1,29 +1,40 @@
+/* Animação slide-in para o feed */
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-enter {
+  animation: slideLeft 0.8s ease-out forwards;
+}
+
 .feed-container {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-  
+
 .feed-container h2 {
+  margin: 0 0 0 5%;
   padding: 2rem;
   font-size: 1.2rem;
   font-weight: 600;
   color: #242424;
 }
-  
-/* Animação slide-in para o feed */
-@keyframes slideLeft {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
+
+/* Estilização do contêiner de cards */
+.feed-container-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  margin: 2rem 0 0 0;
+  padding: 0 2%;
 }
-  
-.slide-enter {
-    animation: slideLeft .8s ease-out forwards;
-}
-  
