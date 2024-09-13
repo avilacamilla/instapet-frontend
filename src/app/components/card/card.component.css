@@ -43,19 +43,21 @@
 }
 
 .mat-card-title {
-    font-size: .9rem;
+    margin: .8rem 0;
+    position: relative;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #242424;
-    margin-bottom: .5rem;
-    position: relative;
 }
 
 .mat-card-input {
     width: 80%;
     border: .05rem solid #ff7d56;
     padding: .2rem 0 .2rem .3rem;
+    font-family: monospace;
     color: #242424;
 }
+
 
 .mat-card-input:focus {
     outline: none;
@@ -69,6 +71,7 @@
 
 .mat-card-btn {
     width: 4rem;
+    margin: 0 0 .5rem 0;
     position: relative;
     border: none;
     background-color: transparent;
