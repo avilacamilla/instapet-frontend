@@ -17,5 +17,8 @@
   </div>
 
   <!-- Botão flutuante de navegação para /new-post -->
-  <app-button-add></app-button-add>
+  <app-button-add (openModal)="openModal()"></app-button-add>
+
+  <!-- Modal para criar nova publicação -->
+  <app-upload-modal *ngIf="isModalOpen" (closeModal)="closeModal()"></app-upload-modal>
 </section>
