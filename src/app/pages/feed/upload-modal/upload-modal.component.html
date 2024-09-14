@@ -1,0 +1,39 @@
+<!-- Fundo do Modal -->
+<div class="modal-backdrop">
+    <!-- Container do Modal -->
+    <div class="upload-modal">
+      <!-- Botão de Fechar -->
+      <div class="close-modal-btn-container">
+        <button class="close-modal-btn" (click)="close()">×</button>
+      </div>
+      
+      <!-- Título do Modal -->
+      <h2 class="modal-title">Criar nova publicação</h2>
+  
+      <!-- Conteúdo Principal -->
+      <div class="modal-content">
+        <!-- Parte Esquerda: Preview da Imagem -->
+        <div class="image-preview">
+          <img *ngIf="selectedImage" [src]="selectedImage" alt="Preview da Imagem">
+          <p *ngIf="!selectedImage">Nenhuma imagem selecionada</p>
+        </div>
+  
+        <!-- Parte Direita: Campos de Entrada -->
+        <div class="upload-fields">
+          <!-- Campo para Título -->
+          <input type="text" [(ngModel)]="title" placeholder="Adicionar título" class="upload-input">
+          
+          <!-- Campo para Descrição -->
+          <textarea [(ngModel)]="description" placeholder="Adicionar descrição" class="upload-textarea"></textarea>
+          
+          <!-- Botão de Seleção de Arquivo -->
+          <button class="select-file-btn" (click)="fileInput.click()">Selecionar imagem</button>
+          <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;">
+          
+          <!-- Botão Compartilhar -->
+          <button class="share-btn" (click)="share()">Compartilhar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
