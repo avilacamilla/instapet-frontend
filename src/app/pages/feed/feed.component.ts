@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; // Importa o Router
 import { HeaderComponent } from '../../components/header/header.component';
-import { CardComponent } from '../../components/card/card.component';
+import { CardComponent } from './card/card.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ButtonAddComponent } from "./button-add/button-add.component";  
