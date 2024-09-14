@@ -10,14 +10,11 @@
   }
 }
 
-.slide-enter {
-  animation: slideLeft 0.8s ease-out forwards;
-}
-
 .feed-container {
   display: flex;
   flex-direction: column;
   width: 100%;
+  /* animation: slideLeft 0.8s ease-out forwards; */
 }
 
 .feed-container h2 {
