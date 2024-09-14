@@ -3,9 +3,7 @@
     <!-- Container do Modal -->
     <div class="upload-modal">
       <!-- Botão de Fechar -->
-      <div class="close-modal-btn-container">
         <button class="close-modal-btn" (click)="close()">×</button>
-      </div>
       
       <!-- Título do Modal -->
       <h2 class="modal-title">Criar nova publicação</h2>
@@ -20,18 +18,22 @@
   
         <!-- Parte Direita: Campos de Entrada -->
         <div class="upload-fields">
-          <!-- Campo para Título -->
-          <input type="text" [(ngModel)]="title" placeholder="Adicionar título" class="upload-input">
+          <div class="upload-fields-inputs-container">
+            <!-- Campo para Título -->
+            <input type="text" [(ngModel)]="title" placeholder="Adicionar título" class="upload-input">
+            
+            <!-- Campo para Descrição -->
+            <textarea [(ngModel)]="description" placeholder="Adicionar descrição" class="upload-textarea"></textarea>
+          </div>
           
-          <!-- Campo para Descrição -->
-          <textarea [(ngModel)]="description" placeholder="Adicionar descrição" class="upload-textarea"></textarea>
-          
-          <!-- Botão de Seleção de Arquivo -->
-          <button class="select-file-btn" (click)="fileInput.click()">Selecionar imagem</button>
-          <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;">
-          
-          <!-- Botão Compartilhar -->
-          <button class="share-btn" (click)="share()">Compartilhar</button>
+          <div class="upload-fields-btns-container">
+            <!-- Botão de Seleção de Arquivo -->
+              <button class="select-file-btn" (click)="fileInput.click()">Selecionar imagem</button>
+              <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;">
+              
+              <!-- Botão Compartilhar -->
+              <button class="share-btn" (click)="share()">Compartilhar</button>
+          </div>
         </div>
       </div>
     </div>
