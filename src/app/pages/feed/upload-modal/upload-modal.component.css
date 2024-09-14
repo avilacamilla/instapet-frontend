@@ -1,3 +1,33 @@
+
+/* Animação para o modal crescer do centro */
+@keyframes growFromCenter {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*Animação do botão para fechar o modal*/
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
 /* Fundo do modal */
 .modal-backdrop {
     display: flex;
@@ -9,7 +39,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10;
+    z-index: 4;
 }
   
 /* Container do modal */
@@ -22,15 +52,23 @@
     border-radius: 0.5rem; /* 8px to rem */
     width: 50rem;
     height: 25rem;
+    animation: growFromCenter 0.5s ease-out forwards;
 }
 
-.close-modal-btn-container {
-    background-color: pink;
-}
-
+/* Botão de fechar */
 .close-modal-btn {
-    font-family: monospace;
-    width: 5rem;
+    display: flex; /* Para centralizar o conteúdo se houver */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    position: absolute;
+    top: 3%; /* 10px to rem */
+    right: 3%; /* 10px to rem */
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    color: #242424;
+    cursor: pointer;
+    animation: pulse 1s infinite; /* Aplica a animação pulse */
 }
   
 /* Conteúdo principal: divisão esquerda e direita */
@@ -45,7 +83,7 @@
     justify-content: center;
     align-items: center;
     flex: 1;
-    height: 18rem;
+    height: 19rem;
     background-color: #f2f2f2;
     border-radius: 0.5rem; /* 8px to rem */
 }
@@ -63,6 +101,18 @@
     flex-direction: column;
     gap: 0.625rem; /* 10px to rem */
     flex: 1;
+}
+
+.upload-fields-inputs-container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.upload-fields-btns-container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }
   
 .upload-input,
@@ -90,14 +140,39 @@
 .share-btn:hover {
     background-color: #e26d36;
 }
-  
-/* Botão de fechar */
-.close-modal-btn {
-    position: absolute;
-    top: 0.625rem; /* 10px to rem */
-    right: 0.625rem; /* 10px to rem */
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+
+
+@media screen and (max-width: 800px) {
+    .upload-modal {
+        justify-content: space-between;
+        width: 90%;
+        height: 38rem;
+    }
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .image-preview {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+      
+    .image-preview img {
+        object-fit: cover;
+        width: 100%;
+        height: 19rem;
+        border-radius: 0.5rem;
+    }
+
+    .upload-fields {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
+  
+
