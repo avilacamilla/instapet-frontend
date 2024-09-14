@@ -3,7 +3,19 @@
     <app-header></app-header>
   </div>
 
-  <h2>Olá, Mestre Supremo!</h2>
+  <div class="feed-container-title-btn-logout">
+    <h2>Olá, Mestre Supremo!</h2>
+    <button 
+      class="feed-btn-logout"
+      (click)="logout()"> <!-- Chama o método logout -->
+      Logout
+      <img 
+        src="../../../assets/icons/logout-icon.png" 
+        alt="" 
+        class="feed-btn-logout-icon"
+      >
+    </button>
+  </div>
 
   <!-- Exibindo os cards de gatinhos -->
   <div class="feed-container-cards">
