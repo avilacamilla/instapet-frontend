@@ -17,9 +17,16 @@ export class UploadModalComponent {
   description: string = '';
   selectedImage: string | ArrayBuffer | null = null;
 
+  // Controle da animação de fechamento
+  isClosing: boolean = false;
+
   // Método para fechar o modal
   close() {
-    this.closeModal.emit();
+    this.isClosing = true; // Ativa a animação de fechamento
+    setTimeout(() => {
+      this.closeModal.emit(); // Fecha o modal após a animação
+      this.isClosing = false; // Reseta o estado para o próximo uso
+    }, 500); // Define a duração da animação em milissegundos
   }
 
   // Método para processar o arquivo selecionado
@@ -47,3 +54,4 @@ export class UploadModalComponent {
     }, 2000);
   }
 }
+
