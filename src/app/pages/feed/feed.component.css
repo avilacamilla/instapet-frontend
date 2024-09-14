@@ -1,13 +1,18 @@
-/* Animação slide-in para o feed */
-@keyframes slideLeft {
+/* Animação slide-out para o logout */
+@keyframes slideRight {
   from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
     transform: translateX(0);
     opacity: 1;
   }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Classe para aplicar a animação slideRight */
+.slide-right {
+  animation: slideRight 0.8s ease-out forwards;
 }
 
 .feed-container {
@@ -17,12 +22,34 @@
   /* animation: slideLeft 0.8s ease-out forwards; */
 }
 
+.feed-container-title-btn-logout {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: pink; */
+}
+
 .feed-container h2 {
-  margin: 0 0 0 5%;
+  margin: 0 0 0 4%;
   padding: 2rem;
   font-size: 1.2rem;
   font-weight: 600;
   color: #242424;
+}
+
+.feed-btn-logout {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 0 6% 0 0;
+  border: none;
+  background-color: transparent;
+  font-family: monospace;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.feed-btn-logout-icon {
+  width: 1rem;
 }
 
 /* Estilização do contêiner de cards */
