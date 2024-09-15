@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';  // Importa o Router
-import { FormComponent, FormField } from "../../components/form/form.component";
+import { FormComponent, FormField } from "../../shared/components/form/form.component";
 
 @Component({
   selector: 'app-login',
