@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "instapet-angular",
+    "public": "dist/instapet-angular/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
