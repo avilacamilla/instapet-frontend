@@ -1,6 +1,6 @@
 <mat-card class="mat-card" appearance="outlined">
     <!-- Botão "x" no canto superior direito -->
-    <button class="mat-card-update-image">x</button>
+    <button (click)="deleteCard()" class="mat-card-update-image">x</button>
     
     <!-- Imagem do card -->
     <img class="mat-card-image" [src]="imageSrc" alt="Imagem do card">

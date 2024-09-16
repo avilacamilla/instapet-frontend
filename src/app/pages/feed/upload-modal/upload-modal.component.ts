@@ -1,23 +1,28 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // Importa o FormsModule
+import { HttpClientModule } from '@angular/common/http';
+import { CardService } from '../../../../services/card.service';
+import { CardModel } from '../../../../models/card.model';
 
 @Component({
   selector: 'app-upload-modal',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Adiciona FormsModule aqui
+  imports: [HttpClientModule, CommonModule, FormsModule],
   templateUrl: './upload-modal.component.html',
-  styleUrls: ['./upload-modal.component.css']
+  styleUrls: ['./upload-modal.component.css'],
+  providers: [CardService]
 })
 export class UploadModalComponent {
   @Output() closeModal = new EventEmitter<void>();
 
-  // Propriedades para título, descrição e imagem selecionada
+  constructor(private cardService: CardService){}
+
   title: string = '';
   description: string = '';
   selectedImage: string | ArrayBuffer | null = null;
+  fileImage?: File = undefined
 
-  // Controle da animação de fechamento
   isClosing: boolean = false;
 
   // Método para fechar o modal
@@ -37,6 +42,7 @@ export class UploadModalComponent {
       const reader = new FileReader();
       reader.onload = () => {
         this.selectedImage = reader.result;
+        this.fileImage = file;
       };
       reader.readAsDataURL(file);
     }
@@ -45,13 +51,18 @@ export class UploadModalComponent {
   // Método para compartilhar a publicação
   share() {
     // Lógica para criar o documento no banco de dados
-    console.log('Compartilhando...', this.title, this.description);
+    // console.log('Compartilhando...', this.title, this.description);
 
-    // Simulando sucesso da operação
-    setTimeout(() => {
-      console.log('Publicação criada com sucesso!');
-      this.close(); // Fecha o modal
-    }, 2000);
+    const card : CardModel = {
+      description: this.description,
+      title: this.title,
+      imageUrl: ''
+    }
+
+    this.cardService.createCard(this.fileImage as File,card).then(obs => obs.subscribe(card => {
+      // console.log(`Publicação criada com sucesso! [${card.cardId}]`);
+      this.close();
+    }))
   }
 }
 
